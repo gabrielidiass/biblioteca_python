@@ -5,21 +5,25 @@ from class_usuario import Usuario
 
 biblioteca = Biblioteca()
 
-def emprestar_livro():
-    titulo = input("Digite o titulo do livro")
-    identificacao = input("Digite o cpf do usuário")
-    biblioteca.emprestar_livro(titulo, identificacao)
 
 def adicionar_livros_pessoas():
-    livro1 = Livro("Python para Iniciantes", "John Doe", 2020, 5)
-    livro2 = Livro("O Senhor dos Anéis", "J.R.R. Tolkien", 1954, 3)
-    livro3 = Livro("Cidades de papel", "John Green", 2016, 3)
-
+    livro1 = Livro("Python para Iniciantes", "John Doe", 2020, 1)
+    livro2 = Livro("O Senhor dos Anéis", "J.R.R. Tolkien", 1954, 1)
+    livro3 = Livro("Cidades de papel", "John Green", 2016, 1)
+    usuario1 = Usuario("Gabrieli", 111000, 91227499)
+    usuario2 = Usuario("Roberta", 222000, 91227499)
+    
     # Adicionando os livros à biblioteca
     biblioteca.cadastrar_livro(livro1)
     biblioteca.cadastrar_livro(livro2)
     biblioteca.cadastrar_livro(livro3)
-    
+    biblioteca.cadastrar_usuario(usuario1)
+    biblioteca.cadastrar_usuario(usuario2)
+def emprestar_livro():
+    titulo = input("Digite o titulo do livro ")
+    identificacao = int(input("Digite o cpf do usuário "))
+    biblioteca.emprestar_livro(titulo, identificacao)
+   
 def cadastrar_livro():
     titulo = input("Digite o título do livro: ")
     autor = input("Digite o nome do autor: ")

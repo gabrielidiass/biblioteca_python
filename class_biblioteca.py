@@ -10,9 +10,11 @@ class Biblioteca:
         self.usuarios.append(usuario)
 
     def emprestar_livro(self, titulo_livro, identificacao_usuario):
+ 
         for livro in self.livros:
             if livro.titulo == titulo_livro and livro.num_copias > 0:
                 for usuario in self.usuarios:
+             
                     if usuario.identificacao == identificacao_usuario:
                         livro.emprestar_livro()
                         return
@@ -46,14 +48,14 @@ class Biblioteca:
         print("Relatório de Livros Disponíveis:")
         for livro in self.livros:
             if livro.num_copias > 0:
-                print(livro.titulo, livro.autor, livro.ano_publicacao, livro.num_copias)
+                print("\t" , livro.titulo)
 
         print("\nRelatório de Livros Emprestados:")
         for livro in self.livros:
             if livro.num_copias == 0:
-                print(livro.titulo, livro.autor, livro.ano_publicacao, livro.num_copias)
+                print("\t" , livro.titulo)
                 
 def gerar_relatorio_usuarios(self):
         print("\nLista de Usuários:")
         for usuario in self.usuarios:
-            print(usuario.nome, usuario.identificacao, usuario.contato)
+            print(usuario.nome)
